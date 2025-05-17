@@ -36,7 +36,7 @@
             text-align: center;
         }
 
-        /* 标题样式 */
+        /* 芝士胎头 */
         h1 {
             color: #ECF9FB;
             font-size: 2.5rem;
@@ -44,7 +44,7 @@
             font-family: 'Mojangles';
         }
 
-        /* 当前时间样式（新增背景设置） */
+        /* 芝士太木 */
         .current-time {
             font-family: 'Mojangles';
             color: #ABB4C0;
@@ -54,13 +54,13 @@
             color: #1BD96A;
             font-size: 1.8rem;
             margin-top: 10px;
-            background-color: #000000; /* 新增背景色 */
-            border-radius: 15px;      /* 新增圆角 */
-            padding: 12px 20px;       /* 新增内边距 */
-            display: inline-block;    /* 使背景包裹内容 */
+            background-color: #000000;
+            border-radius: 15px;
+            padding: 12px 20px;
+            display: inline-block;
         }
 
-        /* 倒计时样式 */
+        /* 芝士太马 */
         .countdown-text {
             color: #ABB4C0;
             font-size: 1.2rem;
@@ -83,18 +83,18 @@
     </style>
 </head>
 <body>
-    <!-- 第一部分：标题 -->
+    <!-- 芝士抬头 -->
     <div class="section">
         <h1>2026年高考倒计时</h1>
     </div>
 
-    <!-- 第二部分：当前时间 -->
+    <!-- 芝士卡润特太木 -->
     <div class="section">
         <div class="current-time">当前时间</div>
         <div class="time-display" id="currentTime"></div>
     </div>
 
-    <!-- 第三部分：倒计时 -->
+    <!-- 芝士太马 -->
     <div class="section">
         <div class="countdown-text">距2026年高考仅剩</div>
         <div>
@@ -118,10 +118,9 @@
     </div>
 
     <script>
-        // 设置高考时间（2026年6月7日 9:00）
         const targetDate = new Date('2026-06-07T09:00:00').getTime();
 
-        // 更新时间显示
+        // 阿普对特太木
         function updateTime() {
             const now = new Date();
             const timeString = now.toISOString().replace(/T/, ' ').replace(/\..+/, '')
@@ -129,7 +128,7 @@
             document.getElementById('currentTime').textContent = timeString;
         }
 
-        // 更新倒计时
+        // 阿普对特太马
         function updateCountdown() {
             const now = new Date().getTime();
             const timeRemaining = targetDate - now;
