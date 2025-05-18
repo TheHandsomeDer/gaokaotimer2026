@@ -60,7 +60,7 @@
             display: inline-block;
         }
 
-        /* 芝士太马 */
+        /* 芝士康当 */
         .countdown-text {
             color: #ABB4C0;
             font-size: 1.2rem;
@@ -105,7 +105,7 @@
 
     <!-- 芝士卡润特太木 -->
     <div class="section">
-        <div class="current-time">当前时间</div>
+        <div class="current-time">当前时间（北京时间，UTC+08:00）</div>
         <div class="time-display" id="currentTime"></div>
     </div>
 
@@ -133,17 +133,29 @@
     </div>
 
     <script>
-        const targetDate = new Date('2026-06-07T09:00:00').getTime();
+        const targetDate = new Date('2026-06-07T00:00:00+08:00').getTime();
+
+        //差点忘了这是北京时间
+        function formatBeijingTime(date) {
+            return date.toLocaleString('zh-CN', {
+                timeZone: 'Asia/Shanghai',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }).replace(/(\d+)\/(\d+)\/(\d+)/, '$1/$2/$3').replace(' ', ' ');
+        }
 
         // 阿普对特太木
         function updateTime() {
             const now = new Date();
-            const timeString = now.toISOString().replace(/T/, ' ').replace(/\..+/, '')
-                .replace(/-/g, '/').substr(0, 19);
-            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentTime').textContent = formatBeijingTime(now);
         }
 
-        // 阿普对特太马
+        // 阿普对特康当
         function updateCountdown() {
             const now = new Date().getTime();
             const timeRemaining = targetDate - now;
